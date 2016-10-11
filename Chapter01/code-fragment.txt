@@ -1,0 +1,19 @@
+Code Fragment from Chapter 1, page 14.
+
+
+
+public int calculate(int x, int y, int z)
+{
+    int total = 0;
+    if(x<y) {
+        total = x + y;
+    }
+    else if(x > y)
+    {
+        total = x + z;
+    }
+    else {
+        total = x+ y + z;
+    }
+    return total;
+}

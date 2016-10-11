@@ -1,0 +1,23 @@
+.drawer {
+    width:100%;
+}
+
+.drawer-icon {
+  float : left;
+  cursor : pointer;
+}
+
+.drawer-label {
+  height : 20px;
+}
+
+.drawer-title-text {
+  margin-left : 25px;
+  font-size : 1.1em;
+  text-decoration : none;
+  cursor : pointer;
+}
+
+.drawer-title-text:hover {
+  text-decoration: underline;
+}

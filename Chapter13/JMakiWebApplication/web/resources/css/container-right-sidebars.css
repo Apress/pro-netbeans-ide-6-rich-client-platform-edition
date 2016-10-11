@@ -1,0 +1,22 @@
+#outerBorder {
+  margin: 0px 0px 0px 0px;
+  padding: 0 5px 5px 5px;
+}
+
+#main {
+  width: 100%;
+  margin-top: 5px;
+}
+
+#content {
+  margin: 0 200px 0 0 ;
+  border: 1px solid #000000;
+}
+
+#rightSidebar {
+  float: right; 
+  width: 190px;
+  height: 250px;
+  border: 1px solid #000000;
+}
+

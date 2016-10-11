@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/VisualWebApplication">
+  <Resource auth="Container" driverClassName="org.apache.derby.jdbc.ClientDriver" maxActive="20" maxIdle="10" maxWait="-1" name="jdbc/APP_ApacheDerby_1" password="app" type="javax.sql.DataSource" url="jdbc:derby://localhost:1527/sample" username="app"/>
+</Context>

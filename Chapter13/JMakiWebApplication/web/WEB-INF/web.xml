@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <context-param>
+        <description>Switch off caching. You can remove this parameter or comment it out when this app goes into production.</description>
+        <param-name>jmaki-usecache</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>XmlHttpProxy</servlet-name>
+        <servlet-class>jmaki.xhp.XmlHttpProxyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>XmlHttpProxy</servlet-name>
+        <url-pattern>/xhp</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        </welcome-file-list>
+    </web-app>

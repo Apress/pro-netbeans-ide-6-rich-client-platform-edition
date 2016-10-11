@@ -1,0 +1,59 @@
+ {
+    'name': 'Drawer',
+    'type': 'dojo',
+    'version' : '1.0',
+    'jmakiVersion' : '1.0',
+    'image': 'images/dojo-drawer.jpg',
+    'dataModel' : 'http://wiki.java.net/bin/view/Projects/jMakiDrawerDataModel',
+    'description': 'This widget allows you to hide or show content to save space on the screen. The drawer opens using animation.',
+    'args': [       
+        {'open': {
+        'type':'BOOLEAN', 'defaultValue' : false, 'description' : 'Where or not to have the widget open on initialization.'}
+        },
+        {'url': {
+            'type':'STRING', 'description' : 'The url to load for the contents of this container.'}
+        },
+        {'content' :{
+            'type':'STRING', 'description' : 'The html content to display when the drawer opens.'}},
+        {'lazyLoad': {
+            'type':'BOOLEAN', 'defaultValue' : false, 'description' : 'Specify whether you want to load the content dynamically when it is opened the first time.'}},
+        {'color':{
+            'type':'STRING',
+            'description': 'The drawer icon color.',
+              'values': [
+                    {'name' : 'Blue', 'value' : 'blue', 'description' : 'Use blue drop down arrow'},
+                    {'name' :  'Gray', 'value' : 'gray', 'description' : 'Use gray drop down arrow'}              
+              ],
+             'defaultValue': 'gray'
+           }          
+         },
+        {'rate':{
+            'type':'NUMBER',
+            'description': 'The speed that the drawer content appears.',
+              'values': [
+                  {'name' : '250' ,'value' : 250, 'description' : 'Fast animation.'},
+                  {'name' : '500', 'value' : 500, 'description' : 'Medium animation.'},
+                  {'name' : '750', 'value' : 750, 'description' : 'Slow animation.'}
+               ],
+             'defaultValue': 250               
+             }
+         },
+        {'topic': {'type':'STRING',
+             'defaultValue': '/dojo/drawer/',
+              'description':'The topic to which this component publishes events to and listens to for URL update events from other widgets such as the menu.'
+          }
+       }  
+    ],
+    'config' : {
+          'type' :
+           { 'id' : 'dojo', 
+             'libs' : [
+                   '../resources/libs/dojo/v0.4.3/djd43.js'
+               ],
+               'preload' : 'if (typeof djConfig ==\'undefined\') djConfig = { parseWidgets: false, searchIds: [] };',
+               'resources' : [
+                 '../resources/libs/dojo/v0.4.3/src'
+               ]
+    }  
+  }
+}

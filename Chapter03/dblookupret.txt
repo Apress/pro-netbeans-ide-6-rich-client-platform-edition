@@ -1,0 +1,43 @@
+
+
+
+PreparedStatement pstmt = null;
+ResultSet rs = null;
+StringBuffer sb = new StringBuffer();
+
+try {
+
+    pstmt = conn.prepareStatement("SELECT COL1, COL2, COL3 FROM"
+                                + " SOMETABLE WHERE INDEXCOL=?");
+
+    pstmt.setInt(1, iPkey);
+    rs = pstmt.executeQuery();
+    sb = new StringBuffer();
+
+    while(rs.hasNext()) {
+
+        String sCol1 = rs.getString("COL1");
+        String sCol2 = rs.getString("COL2");
+        String sCol3 = rs.getString("COL3");
+
+        sb.append(sCol1).append(",");
+        sb.append(sCol2).append(",");
+        sb.append(sCol3).append(",");
+    }
+  } catch(Exception e) {
+
+        // Good error handling goes here
+        e.printStackTrace();
+} finally {
+
+    try {
+            if(rs!=null) {
+                rs.close();
+            }
+            if(pstmt!=null) {
+                pstmt.close();
+            }
+        } catch(Exception e) { }
+}
+
+return sb.toString();

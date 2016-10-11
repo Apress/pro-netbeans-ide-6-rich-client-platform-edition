@@ -1,0 +1,41 @@
+{
+    'name': 'Rich Text Editor',
+    'type': 'dojo',
+    'jmakiVersion' : '1.0',
+    'version' : '1.0',
+    'image': 'images/dojo-editor.jpg',
+    'url' : 'http://www.dojotoolkit.org',
+    'description': 'This widget is a rich text editor component.',
+    'value': {'required': false, 'type': 'STRING', 'defaultValue': 'Edit Me Please'},
+    'args': [
+        {'toolbar':{'type':'STRING',
+            'description': 'The toolbar type.',
+                'values': [
+                    {'name' : 'Small', 'value' : 'small', 'description' : 'Small width toolbar.'},
+                    {'name' : 'Medium', 'value' : 'small', 'description' : 'Medium width toolbar.'},
+                    {'name' : 'Full', 'value' : 'small', 'description' : 'Full width toolbar. Over 700px.'}
+                  ],
+                 'defaultValue': 'small'
+              }
+           }
+    	],
+       'config' : {
+          'type' :
+           { 'id' : 'dojo-editor', 
+             'dynamicallyLoadable' : false,
+             'libs' : [
+                   '../resources/libs/dojo/v0.4.3/djd43.js'
+               ],
+               'preload' : 'if (typeof djConfig ==\'undefined\') djConfig = { parseWidgets: false, searchIds: [] };',
+               'postload' : 'djd43.require("djd43.widget.Editor2");',
+               'resources' : [
+                 '../resources/libs/dojo/v0.4.3/src'
+               ]
+          }  
+    },
+    'topicInfo' : {
+	'type' : 'publish',
+	'topicName' : '/dojo/editor/onSave',
+	'description' : 'Publish contents of the editor when Save event occurs'
+    }    	
+}

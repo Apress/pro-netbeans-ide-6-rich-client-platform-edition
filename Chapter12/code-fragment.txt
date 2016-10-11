@@ -1,0 +1,16 @@
+#  Code fragment from page  293 of Chapter 12
+
+
+
+
+include Java
+import java.util.ArrayList
+
+dogs = ArrayList.new
+dogs.add "Spaniel"
+dogs.add "Hound"
+dogs.add "Retriever"
+
+dogs.each do |dog|
+  puts dog
+end

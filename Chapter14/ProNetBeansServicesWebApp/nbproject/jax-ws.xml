@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="NewWebServiceFromWSDL">
+      <implementation-class>com.pronetbeans.examples.services.NewWebServiceFromWSDL</implementation-class>
+      <wsdl-url>file:/D:/pnb6-projects/ProNetBeansServicesWebApp/CustomerInfoService.wsdl</wsdl-url>
+      <local-wsdl-file>CustomerInfoService.wsdl</local-wsdl-file>
+      <service-name>CustomerInfoService</service-name>
+      <port-name>CustomerInfoPort</port-name>
+      <package-name>service.newwebservicefromwsdl</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

@@ -1,0 +1,37 @@
+{'name': 'Editable Filtering Table',
+         'type': 'dojo',
+         'jmakiVersion' : '1.0',
+         'version' : '1.0',
+         'image' : 'images/dojo-sorting-table.jpg',
+         'description': 'This widget is storing table which you filter data for and add items. You can edit items by double clicking on the cell. Add a table.onCellUpdate(row, column, value) handler to detect cell updates.',
+         'args': [
+         ],
+         'value': {
+             'required':false,
+             'type': 'OBJECT',
+             'defaultValue':{
+                'columns':[
+                              { 'label' : 'Title', 'id' : 'title'},
+                              { 'label':'Author', 'id' : 'author'},
+                              { 'label': 'ISBN #', 'id' : 'isbn'},
+                              { 'label': 'Description', 'id' : 'description'}
+                              ],
+                'rows':[
+                        { 'title' : 'Book Title 1', 'author' : 'Author 1', 'isbn': '4412', 'description' : 'A Some long description'},
+                        { 'id' : 'foo', 'title' : 'Book Title 2', 'author' : 'Author 2', 'isbn': '4412', 'description' : 'A Some long description'}
+                       ]
+             },
+         'description':'An object containing a object of colums and array of row arrays to be added to the table.'},
+         'config' : {
+          'type' :
+           { 'id' : 'dojo', 
+             'libs' : [
+                   '../resources/libs/dojo/v0.4.3/djd43.js'
+               ],
+               'preload' : 'if (typeof djConfig ==\'undefined\') djConfig = { parseWidgets: false, searchIds: [] };',
+               'resources' : [
+                 '../resources/libs/dojo/v0.4.3/src'
+               ]
+         }      
+     }
+ }

@@ -1,0 +1,39 @@
+{'name': 'Accordion',
+         'type': 'Spry',
+         'version': '1.0',
+         'jmakiVersion': '1.0',
+         'image' : 'images/spry-accordion.jpg',
+         'modelURL' : 'http://wiki.java.net/bin/view/Projects/jMakiAccordionDataModel',
+         'description': 'This widget is an accordion container which you can customize using inline conent or point to a URL for which the content including any widgets is loaded into the tab.',
+         'args': [
+            {'gradient' : {
+               'type':'STRING', 
+                'description' : 'The row gradient.',
+                'defaultValue' : 'blue',
+                 'values': [
+                    {'name' : 'Aqua', 'value' : 'aqua', 'description' : 'Aqua background.'},
+                    {'name' : 'Blue', 'value' : 'blue', 'description' : 'Aqua background.'},
+                    {'name' : 'Gray', 'value' : 'gray', 'description' : 'Gray background.'},
+                    {'name' : 'Green', 'value' : 'green', 'description' : 'Green background.'}
+                   ]
+                }
+             }
+         ],
+         'value': {'required':'false', 'type': 'OBJECT', 'defaultValue':{	
+            'items' : [
+                {'label' : 'Books', 'content' : 'Book content'},
+                {'label' : 'Magazines', 'include' : 'test.jsp'},
+                {'label' : 'Newspaper', 'content' : 'Newspaper content', 'selected' : true}
+            ]
+            },
+        'description':'An object containing an array of row objects. Each object has a \'label\' property and a \'content\'  for which the content is embedded in the JSON or a \'include\'  the within the same web application where the \'include\'  contents including widgets are loaded into the row.'},
+        'config' : {
+             'type': {
+                 'id' : 'spry.accordion',
+                 'libs': [ 
+                     '../resources/libs/spry/version1.3/SpryAccordion.js',
+                     '../resources/libs/spry/version1.3/SpryEffects.js',
+                  ]
+		       }
+         }
+ }

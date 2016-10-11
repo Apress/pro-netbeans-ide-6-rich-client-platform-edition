@@ -1,0 +1,29 @@
+ {
+    'name': 'Inplace',
+    'type': 'scriptaculous',
+    'version': '1.0',
+    'jmakiVersion': '1.0',    
+    'image': 'images/scriptaculus-inplace.jpg',
+    'description': 'A autocomplete widget.',
+    'config' : {
+        'type' :
+	{'id': 'scriptaculous',
+         'version': '1.6.4',
+         'libs': [
+                  '../resources/libs/scriptaculous/v1.6.4/prototype.js',
+                  '../resources/libs/scriptaculous/v1.6.4/scriptaculous.js',
+                  '../resources/libs/scriptaculous/v1.6.4/dragdrop.js',
+                  '../resources/libs/scriptaculous/v1.6.4/effects.js',
+                  '../resources/libs/scriptaculous/v1.6.4/builder.js',
+                  '../resources/libs/scriptaculous/v1.6.4/slider.js',
+                  '../resources/libs/scriptaculous/v1.6.4/controls.js'
+                 ],
+	'resources': 'services/inplaceService.jsp'
+        }
+    },
+    'topicInfo': {
+	'type': 'publish',
+	'topicName': '/scriptaculous/inplace/valueUpdate',
+	'description':'publish to topicName when the value is updated.  If there is a service, publish to /scriptaculous/inplace/response on onComplete event'
+    }
+  }

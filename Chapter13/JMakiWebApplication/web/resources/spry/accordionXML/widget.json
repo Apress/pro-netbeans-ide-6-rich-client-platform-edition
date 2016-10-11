@@ -1,0 +1,6 @@
+{'name': 'XML Accordion',
+         'type': 'spry',
+         'version': '.8',
+         'image' : 'images/spry-accordionxml.jpg',
+         'description': 'This widget is an XML based accordion container which you can customize using an XML document that is set as the service.',
+  }

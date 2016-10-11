@@ -1,0 +1,32 @@
+{'name': 'Accordion Container',
+         'type': 'dojo',
+         'image' : 'images/dojo-accordion.jpg',
+         'jmakiVersion' : '1.0',
+         'version' : '1.0',
+         'modelURL' : 'http://wiki.java.net/bin/view/Projects/jMakiAccordionDataModel',
+         'description': 'This widget is an accordion container which you can customize using inline text or URLs to resources.',
+         'value': {
+            'required': false,
+            'type': 'OBJECT',
+            'defaultValue':{	
+             'items':[
+                {'label': 'Books', 'content': 'Book content'},
+                {'label': 'Magazines', 'content': 'Magazines here'},
+                {'label': 'Newspaper', 'content': 'Newspaper content'}
+              ]
+            },
+            'description':'An object containing an array of row objects. Each object has a label property and may have a URL that maps to an external resource or a content attribute which contains inline text.'
+     },
+       'config' : {
+          'type' :
+           { 'id' : 'dojo-editor',
+             'libs' : [
+                   '../resources/libs/dojo/v0.4.3/djd43.js'
+               ],
+               'preload' : 'if (typeof djConfig ==\'undefined\') djConfig = { parseWidgets: false, searchIds: [] };',
+               'resources' : [
+                 '../resources/libs/dojo/v0.4.3/src'
+               ]
+          } 
+      } 
+ }

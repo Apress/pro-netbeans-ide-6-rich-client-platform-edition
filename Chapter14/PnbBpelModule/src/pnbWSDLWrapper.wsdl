@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="pnbWSDLWrapper" targetNamespace="http://enterprise.netbeans.org/bpel/pnbWSDLWrapper" xmlns:tns="http://enterprise.netbeans.org/bpel/pnbWSDLWrapper" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns="http://j2ee.netbeans.org/wsdl/pnbWSDL">
+    <import location="pnbWSDL.wsdl" namespace="http://j2ee.netbeans.org/wsdl/pnbWSDL"/>
+    <plnk:partnerLinkType name="PersonLookupServiceLinkType">
+        <plnk:role name="PersonLookupServiceRole" portType="ns:pnbWSDLPortType"/>
+    </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="pnbWSDLLinkType">
+        <plnk:role name="pnbWSDLRole" portType="ns:pnbWSDLPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsgen-init" depends="init, -do-compile">
+        <mkdir dir="${build.generated.dir}/wsgen/service"/>
+        <mkdir dir="${build.generated.dir}/wsgen/binaries"/>
+        <mkdir dir="${build.classes.dir.real}"/>
+        <taskdef name="wsgen" classname="com.sun.tools.ws.ant.WsGen">
+            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir.real}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsgen-CustomerInfo" depends="wsgen-init">
+        <wsgen fork="true" xendorsed="true" sourcedestdir="${build.generated.dir}/wsgen/service" resourcedestdir="${build.generated.dir}/wsgen/service" destdir="${build.generated.dir}/wsgen/binaries" keep="true" genwsdl="true" sei="com.pronetbeans.examples.services.CustomerInfo">
+            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir.real}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+            <jvmarg value="-Djava.endorsed.dirs=${jaxws.endorsed.dir}"/>
+        </wsgen>
+    </target>
+    <target name="wsgen-service-compile" depends="wsgen-CustomerInfo">
+        <webproject2:javac srcdir="${build.generated.dir}/wsgen/service" classpath="${j2ee.platform.wsimport.classpath}:${javac.classpath}" destdir="${build.classes.dir.real}" javac.compilerargs.jaxws="-Djava.endorsed.dirs='${jaxws.endorsed.dir}'"/>
+    </target>
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.dir}/wsimport/service"/>
+        <mkdir dir="${build.generated.dir}/wsimport/binaries"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-service-check-NewWebServiceFromWSDL" depends="wsimport-init">
+        <condition property="wsimport-service-NewWebServiceFromWSDL.notRequired">
+            <available file="${build.generated.dir}/wsimport/service/service/newwebservicefromwsdl" type="dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-service-NewWebServiceFromWSDL" depends="wsimport-init,wsimport-service-check-NewWebServiceFromWSDL" unless="wsimport-service-NewWebServiceFromWSDL.notRequired">
+        <wsimport xendorsed="true" verbose="true" sourcedestdir="${build.generated.dir}/wsimport/service" extension="true" destdir="${build.generated.dir}/wsimport/binaries" wsdl="${basedir}/${conf-dir}xml-resources/web-services/NewWebServiceFromWSDL/wsdl/CustomerInfoService.wsdl" wsdlLocation="" catalog="catalog.xml"/>
+        <copy todir="${build.web.dir.real}/WEB-INF/wsdl/NewWebServiceFromWSDL">
+            <fileset dir="${basedir}/${conf-dir}xml-resources/web-services/NewWebServiceFromWSDL/wsdl/"/>
+        </copy>
+    </target>
+    <target name="wsimport-service-clean-NewWebServiceFromWSDL" depends="-init-project">
+        <delete dir="${build.generated.dir}/wsimport/service/service/newwebservicefromwsdl"/>
+    </target>
+    <target name="wsimport-service-generate" depends="wsimport-init, wsimport-service-NewWebServiceFromWSDL"/>
+    <target name="wsimport-service-compile" depends="-pre-pre-compile">
+        <webproject2:javac srcdir="${build.generated.dir}/wsimport/service" classpath="${j2ee.platform.wsimport.classpath}:${javac.classpath}" destdir="${build.classes.dir.real}" javac.compilerargs.jaxws="-Djava.endorsed.dirs='${jaxws.endorsed.dir}'"/>
+    </target>
+</project>

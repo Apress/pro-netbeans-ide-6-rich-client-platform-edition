@@ -1,0 +1,44 @@
+{'name': 'Combobox',
+         'type': 'dojo',
+         'image' : 'images/dojo-combobox.jpg',
+         'jmakiVersion' : '1.0',
+         'version' : '1.0',
+         'modelURL' : 'http://wiki.java.net/bin/view/Projects/jMakiComboxModel',         
+         'description': 'This widget is dynamic combobox where the options that you can select are narrowed down as you type.',
+         'args': [
+           {'topic':{
+            'type':'STRING',
+                     'defaultValue' : '/dojo/combobox',
+                      'description': 'The topic published to'}  
+                    }
+          ],
+         'value': {
+             'required': true,
+             'type': 'ARRAY',
+             'defaultValue':
+             [
+                              {'label' : 'Alabama', 'value' : 'AL'},
+                              {'label' : 'California', 'value' : 'CA'},
+                              {'label' : 'New York', 'value' : 'NY', 'selected' : true},
+                              {'label' : 'Texas', 'value' : 'TX'}	           
+                              ],
+             'description':'An array item arrays that are added to the widget.'
+     },
+     'config' : {
+          'type' :
+           { 'id' : 'dojo', 
+             'libs' : [
+                   '../resources/libs/dojo/v0.4.3/djd43.js'
+               ],
+               'preload' : 'if (typeof djConfig ==\'undefined\') djConfig = { parseWidgets: false, searchIds: [] };',
+               'resources' : [
+                 '../resources/libs/dojo/v0.4.3/src'
+               ]
+          }  
+        } ,
+	'topicInfo': {
+	    'type': 'publish',
+	    'topicName': '/dojo/combobox',
+	    'description': 'Publish widget id and value selected'
+	}
+  }

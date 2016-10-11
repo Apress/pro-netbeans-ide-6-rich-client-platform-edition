@@ -1,0 +1,29 @@
+ {
+    'name': 'Time Picker',
+    'type': 'dojo',
+    'image': 'images/dojo-timepicker.jpg',
+    'jmakiVersion' : '1.0',
+    'version' : '1.0',
+    'description': 'This widget is time picker.',
+    'value': {
+         'required': false,
+         'type': 'String', 'description' :'A date formated in MM/DD/YYYY format.'
+    },
+    'config' : {
+          'type' :
+           { 'id' : 'dojo', 
+             'libs' : [
+                   '../resources/libs/dojo/v0.4.3/djd43.js'
+               ],
+               'preload' : 'if (typeof djConfig ==\'undefined\') djConfig = { parseWidgets: false, searchIds: [] };',
+               'resources' : [
+                 '../resources/libs/dojo/v0.4.3/src'
+               ]
+    }
+   },
+    'topicInfo': {
+	'type' : 'publish',
+	'topicName' : '/dojo/timepicker/onSelect',
+	'description' : 'Publish widget id, args and time selected',
+    } 
+  }

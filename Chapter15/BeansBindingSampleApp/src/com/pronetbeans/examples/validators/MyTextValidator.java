@@ -1,0 +1,33 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package com.pronetbeans.examples.validators;
+
+import org.jdesktop.beansbinding.Validator;
+
+/**
+ *
+ * @author Adam Myatt
+ */
+public class MyTextValidator extends Validator{
+
+    @Override
+    public Validator.Result validate(Object arg0) {
+        
+        Validator.Result result = null;
+        System.out.println("DescriptionTextValidator.validate has fired.");
+        if(arg0 instanceof String) {
+            String sResult = (String) arg0;
+            
+            if(sResult.indexOf('$')!=-1) {
+                result = new Validator.Result("123", "Invalid dollar sign");
+                System.out.println("The text value contained a dollar sign.");
+            }
+        }
+       
+        return result;
+    }
+    
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process
+    name="pnbProcess"
+    targetNamespace="http://enterprise.netbeans.org/bpel/PnbBpelModule/pnbProcess"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/PnbBpelModule/pnbProcess" xmlns:ns1="http://enterprise.netbeans.org/bpel/pnbWSDLWrapper" xmlns:ns2="http://j2ee.netbeans.org/wsdl/pnbWSDL">
+    <import namespace="http://j2ee.netbeans.org/wsdl/pnbWSDL" location="pnbWSDL.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="pnbPartnerLink" partnerLinkType="ns2:pnbWSDLPartner" myRole="pnbWSDLPortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="price" messageType="ns2:getOrderPriceReply"/>
+        <variable name="Variable1"/>
+        <variable name="OrderIdVar" type="xsd:long"/>
+    </variables>
+    <sequence>
+        <receive name="ReceiveOrder" createInstance="yes" partnerLink="pnbPartnerLink" operation="getOrderPrice" portType="ns2:pnbWSDLPortType"/>
+        <if name="If1">
+            <condition> ( $OrderIdVar = 1000 ) </condition>
+            <assign name="Assign1">
+                <copy>
+                    <from>123456789</from>
+                    <to variable="price"/>
+                </copy>
+            </assign>
+        </if>
+        <reply name="PriceReply" partnerLink="pnbPartnerLink" operation="getOrderPrice" portType="ns2:pnbWSDLPortType" variable="price"/>
+    </sequence>
+</process>

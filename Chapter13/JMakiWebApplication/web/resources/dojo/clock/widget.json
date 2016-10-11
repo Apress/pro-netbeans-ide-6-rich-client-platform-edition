@@ -1,0 +1,83 @@
+{
+    "name" : "Clock",
+    "type" : "dojo",
+    'version' : '1.0',
+    'jmakiVersion' : '1.0',    
+    "image" : "images/dojo-clock.jpg",
+    "description" : "This widget is a clock.",
+    "args": [
+        {"clockType" : {
+           "type":"STRING", 
+            "description" : "The clock type.",
+            "defaultValue" : 'black',
+             'values': [
+                {'name' : 'Plain', 'value' : 'plain', 'description' : 'Clock with blue background.'},
+                {'name' : 'Black', 'value' : 'black', 'description' : 'Clock with black background.'},
+                {'name' : 'Black Texture', 'value' : 'blackTexture', 'description' : 'Clock with black texture background.'},
+                {'name' : 'Gray', 'value' : 'gray', 'description' : 'Clock with gray background.'},
+                {'name' : 'Gray Plastic', 'value' : 'grayPlastic', 'description' : 'Clock with gray plastic background.'}
+               ]
+            }
+         },
+    	{"timeZoneOffset": {
+    	     "type":"NUMBER",
+    	     "description": "The time Offset.",
+    	     "defaultValue": 0
+    	    }
+    	 },
+        {"label":{
+            "type":"STRING",
+            "description":"The label at the top of the clock.",   
+            "defaultValue": ""
+            }
+        },
+        {"labelColor":{
+            "type":"STRING",
+              "description":"The color of the label.",
+              "defaultValue": "#000"
+             }
+         },
+        {"topLabelColor":{
+            "description":"The color of the label at the top of the clock.",
+            "type":"STRING",
+            "defaultValue": "#efefef"
+           }
+        },
+        {"handColor":{
+            "type":"STRING",
+            "description":"The color of the clock hand.",
+            "defaultValue": "#788598"
+             }
+         },
+        {"handBorderColor": {
+            "type":"STRING",
+            "description":"The color of the borders around the minute and hour hands.",
+            "defaultValue": "#6f7b8c"
+            }
+         },
+        {"secondHandColor":{
+            "type":"ARRAY",
+            "description":"The color of the second hand in [R,G,B, opaicity] format.",
+            "defaultValue": [201, 4, 5, 0.8]
+             }
+        },
+        {"showAMPM":{
+            "type":"BOOLEAN",
+            "description":"Where or not to show an AM/PM with the clock",
+            "defaultValue": true
+        }
+        } 
+    ],
+    'config' : {
+          'type' :
+           { 'id' : 'dojo', 
+             'libs' : [
+                   '../resources/libs/dojo/v0.4.3/djd43.js'
+               ],
+               'preload' : 'if (typeof djConfig ==\'undefined\') djConfig = { parseWidgets: false, searchIds: [] };',
+               'resources' : [
+                 '../resources/libs/dojo/v0.4.3/src'
+               ]
+    }
+  }
+}

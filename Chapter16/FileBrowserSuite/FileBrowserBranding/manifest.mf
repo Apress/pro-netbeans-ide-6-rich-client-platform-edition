@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.pronetbeans.filebrowserbranding
+OpenIDE-Module-Layer: com/pronetbeans/filebrowserbranding/layer.xml
+OpenIDE-Module-Localizing-Bundle: com/pronetbeans/filebrowserbranding/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

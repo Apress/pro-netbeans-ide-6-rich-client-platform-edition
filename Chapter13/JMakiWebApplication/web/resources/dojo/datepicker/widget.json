@@ -1,0 +1,34 @@
+ {
+    'name': 'Drop Down Date Picker',
+    'type': 'dojo',
+    'version' : '1.0',
+    'jmakiVersion' : '1.0',    
+    'image': 'images/dojo-date-picker.jpg',
+    'description': 'This widget is a drop down date picker.',
+    'value': {'required': false, 'type': 'DATE'},
+    "args": [
+        {"displayFormat":{
+            "type":"STRING",
+            "description":"The format of the data in MM/dd/yyyy where MM = Month, dd == day of month, and yyyy is the year",   
+            "defaultValue": "MM/dd/yyyy"
+            }
+        }
+    ],   
+    'config' : {
+          'type' :
+           { 'id' : 'dojo', 
+             'libs' : [
+                   '../resources/libs/dojo/v0.4.3/djd43.js'
+               ],
+               'preload' : 'if (typeof djConfig ==\'undefined\') djConfig = { parseWidgets: false, searchIds: [] };',
+               'resources' : [
+                 '../resources/libs/dojo/v0.4.3/src'
+               ]
+    }, 
+    'topicInfo' : {
+	'type' : 'publish',
+	'topicName' : '/dojo/dropdownDatePicker',
+	'description' : 'Publish widget id, wargs and value selected',
+    }        
+  }
+}

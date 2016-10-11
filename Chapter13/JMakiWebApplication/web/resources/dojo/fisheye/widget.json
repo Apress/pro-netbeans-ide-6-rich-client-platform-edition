@@ -1,0 +1,55 @@
+ {
+    'name': 'Fisheye',
+    'type': 'dojo',
+    'image': 'images/dojo-fisheye.jpg',
+    'jmakiVersion' : '1.0',
+    'version' : '1.0',
+    'description': 'This widget is dynamic toolbar that expands as you mouse over it.',
+    'args': [ 
+          {'orientation': {'type':'STRING',
+           'description' : 'The orientation of the Fish Eye.',
+           'values': [
+                {'name' : 'Horizontal',   'value' : 'horizontal', 'description' : 'Horizontal orientation.'},
+                {'name' : 'Vertical',   'value' : 'vertical', 'description' : 'Vertical orientation.'}
+            ],
+           'defaultValue': 'horizontal'
+           }
+            },
+           {'labelEdge': {'type':'STRING',
+                'description' : 'The position of the labels.',
+                'values': [
+                 {'name' : 'Bottom', 'value' : 'bottom', 'description' : 'Label on the bottom.'},
+                 {'name' : 'Right', 'value' : 'right', 'description' : 'Label on the right.'}
+                 ],
+                 'defaultValue': 'bottom'
+              }
+           },
+           {'items': {'type':'ARRAY',
+             'description' : 'The names for the items to be added.',
+                     'defaultValue': ['item1','item2','item3']
+              }
+           }
+     ],
+     'value' : {
+         'required': false,
+         'type': 'ARRAY',
+         'defaultValue' : [ 
+                              {'action' : { 'topic' : '/foo', 'message' : 'item 1'}, 'iconSrc' :'https://ajax.dev.java.net/images/blog_murray.jpg', 'label' : 'You are here!'},
+                              {'iconSrc' :'https://ajax.dev.java.net/images/chinnici.jpg', 'label' : 'test3'},
+                              {'href' : 'http://jmaki.com', 'iconSrc' :'https://ajax.dev.java.net/images/JayashriVisvanathan.jpg', 'label' : 'test4'}
+                              ]
+         
+     },
+    'config' : {
+          'type' :
+           { 'id' : 'dojo', 
+             'libs' : [
+                   '../resources/libs/dojo/v0.4.3/djd43.js'
+               ],
+               'preload' : 'if (typeof djConfig ==\'undefined\') djConfig = { parseWidgets: false, searchIds: [] };',
+               'resources' : [
+                 '../resources/libs/dojo/v0.4.3/src'
+               ]
+         }
+    }
+ }

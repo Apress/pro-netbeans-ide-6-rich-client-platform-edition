@@ -1,0 +1,25 @@
+{
+    'name': 'In Line Edit',
+    'type': 'dojo',
+    'image': 'images/dojo-inline-edit.jpg',
+    'jmakiVersion' : '1.0',
+    'version' : '1.0',
+    'description': 'This widget is in line edit component.',
+    'value': {
+       'required': false,
+       'type': 'STRING',
+       'defaultValue': 'Edit Me Please'
+     },
+    'config' : {
+          'type' :
+           { 'id' : 'dojo', 
+             'libs' : [
+                   '../resources/libs/dojo/v0.4.3/djd43.js'
+               ],
+               'preload' : 'if (typeof djConfig ==\'undefined\') djConfig = { parseWidgets: false, searchIds: [] };',
+               'resources' : [
+                 '../resources/libs/dojo/v0.4.3/src'
+               ]
+    }
+  }
+}

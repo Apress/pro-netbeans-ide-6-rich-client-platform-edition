@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.pronetbeans.filebrowserplugin
+OpenIDE-Module-Layer: com/pronetbeans/filebrowserplugin/layer.xml
+OpenIDE-Module-Localizing-Bundle: com/pronetbeans/filebrowserplugin/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

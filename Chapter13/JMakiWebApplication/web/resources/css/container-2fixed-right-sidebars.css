@@ -1,0 +1,34 @@
+#border {
+  margin: 0px 10px 20px 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+#main {
+  top:0;
+  left:  0;
+  width: 100%;
+  margin-top: 5px;
+}
+
+#rightColumnTop {
+  float:right;
+  margin-left: 5px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000000;
+}
+
+#rightColumn {
+  clear : right;
+  float : right;
+  margin : 5px 0px 5px 5px;
+  width: 200px;
+  height: 282px;
+  border: 1px solid #000000;
+}
+
+#leftColumn {
+  margin: 0 205px 0 0;
+  border: 1px solid #000000;
+  margin-bottom: 10px;
+}
